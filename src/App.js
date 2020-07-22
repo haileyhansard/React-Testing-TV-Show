@@ -22,7 +22,9 @@ useEffect(() => {
     .then(res => {
       //set state with data
       setShow(res.data);
-          setSeasons(formatSeasons(res.data._embedded.episodes));
+      setSeasons(formatSeasons(res.data._embedded.episodes));
+    }).catch(err => {
+      console.log('Error:', err);
     })
   }, []);
 
